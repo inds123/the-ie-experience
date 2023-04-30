@@ -1,8 +1,54 @@
-from graphics import *
-# Initial screen drawing
+# Defining classes
+
+# Defining a Player
+class Player:
+    def __init__(self, name, health, knowledge, will_to_live, hunger):
+        self.name = name
+        self.health = 40 
+        self.knowledge = knowledge
+        self.hunger = 40
+        self.will_to_live = 40
+        self.current_room = bedroom
+        self.backpack = Backpack()
+
+    def __str__(self):
+        return f"Name: {self.name}"
+
+    def get_status(self):
+        return {
+            "Health: ": self.health,
+            "Knowledge: ": self.knowledge,
+            "Will to live: ": self.will_to_live,
+            "Hunger: ": self.hunger,
+            "Location: ": self.current_room
+        }
+        
+    # Defining basic functionalities of playerff
+    # Each of the following must also check if the player is in the correct room
+    # Also must handle cases where the player does not have the item in their backpack
+    # Also must handle cases if status is full
+
+    #Defining eating functionality where the players hunger decreases and the will_to_live increases, as its healthy food
+    def eat_healthy(self):
+        self.hunger = self.hunger - 20
+        self.will_to_live = self.will_to_live + 10
+
+    # Defining eating functionality where the players hunger increases and the will_to_live decreases
+    def eat_Junk(self):
+        self.hunger = self.hunger + 20
+        self.will_to_live = self.will_to_live - 10
+
+    # Defining when the player goes ot the gym how the progress bars are affected (All 3 increase)
+    def hit_Gym(self):
+        self.health = self.health + 20
+        self.will_to_live = self.will_to_live + 10
+        self.hunger = self.hunger + 15
+def main():
+  from graphics import *
+  # Initial screen drawing
 
 
 
 
 
-# Functions we need
+  # Functions we need
